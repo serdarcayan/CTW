@@ -1,0 +1,17 @@
+{
+  "size": {
+    "width": 400,
+    "height": 250
+  },
+  "position": {
+    "x": 100,
+    "y": 100
+  },
+  "theme": {
+    "mode": "dark",
+    "background_color": "#1E1E2F",
+    "text_color": "#FFFFFF",
+    "accent_color": "#FF6F61"
+  },
+  "slider_speed": 5000
+}

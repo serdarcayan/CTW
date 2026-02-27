@@ -1,0 +1,62 @@
+{
+  "ui": {
+    "size": {
+      "width": 400,
+      "height": 250
+    },
+    "position": {
+      "x": 100,
+      "y": 100
+    },
+    "theme": {
+      "mode": "dark",
+      "background_color": "#1E1E2F",
+      "text_color": "#FFFFFF",
+      "accent_color": "#FF6F61"
+    },
+    "slider_speed": 5000
+  },
+  "global": {
+    "fetch_threads": 4,
+    "default_timeout": 10,
+    "logging_level": "DEBUG"
+  },
+  "items": [
+    {
+      "title": "Döviz Kuru USD/TRY",
+      "source_type": "web",
+      "url": "https://www.example.com/doviz",
+      "xpath": "//div[@id='usd-try']",
+      "fetch_mode": "interval",
+      "duration": 600,
+      "cache_policy": "timed"
+    },
+    {
+      "title": "Haber Başlığı",
+      "source_type": "web",
+      "url": "https://www.example-news.com",
+      "xpath": "//h1[@class='headline']",
+      "fetch_mode": "interval",
+      "duration": 300,
+      "cache_policy": "timed"
+    },
+    {
+      "title": "Kripto Fiyat BTC",
+      "source_type": "api",
+      "url": "https://api.example-crypto.com/v1/prices/btc",
+      "xpath": "$.data.price",
+      "fetch_mode": "interval",
+      "duration": 60,
+      "cache_policy": "timed"
+    },
+    {
+      "title": "Yerel Notlar",
+      "source_type": "local_file",
+      "url": "/home/user/notes.txt",
+      "xpath": "$.latest_note",
+      "fetch_mode": "manual",
+      "duration": 0,
+      "cache_policy": "cache_only"
+    }
+  ]
+}

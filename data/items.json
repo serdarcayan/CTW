@@ -1,0 +1,52 @@
+[
+  {
+    "title": "Example News Article",
+    "source_type": "web",
+    "fetch_mode": "manual",
+    "duration": 600,
+    "url": "https://example.com/news",
+    "xpaths": ["//h1", "//div[@class='content']"],
+    "cache_policy": "save_all",
+    "created_at": "2026-02-23T21:38:25.932883"
+  },
+  {
+    "title": "Tech Blog Post",
+    "source_type": "web",
+    "fetch_mode": "manual",
+    "duration": 600,
+    "url": "https://example.com/tech",
+    "xpaths": ["//article", "//p"],
+    "cache_policy": "save_all",
+    "created_at": "2026-02-23T21:38:25.932883"
+  },
+  {
+    "title": "Product Page",
+    "source_type": "web",
+    "fetch_mode": "manual",
+    "duration": 600,
+    "url": "https://example.com/product",
+    "xpaths": ["//h1[@class='product-title']", "//span[@class='price']"],
+    "cache_policy": "save_all",
+    "created_at": "2026-02-23T21:38:25.932883"
+  },
+  {
+    "title": "Documentation Page",
+    "source_type": "web",
+    "fetch_mode": "manual",
+    "duration": 600,
+    "url": "https://example.com/docs",
+    "xpaths": ["//h2", "//code"],
+    "cache_policy": "save_all",
+    "created_at": "2026-02-23T21:38:25.932883"
+  },
+  {
+    "title": "Tutorial Page",
+    "source_type": "web",
+    "fetch_mode": "manual",
+    "duration": 600,
+    "url": "https://example.com/tutorial",
+    "xpaths": ["//h1", "//div[@class='tutorial-content']"],
+    "cache_policy": "save_all",
+    "created_at": "2026-02-23T21:38:25.932883"
+  }
+]
