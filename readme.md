@@ -1,7 +1,7 @@
 readme = """# CTW – Masaüstü Yardımcı Uygulama
 
 <div align="center">
-  <img src="assets/icons/app_icon.png" alt="CTW Logo" width="120"/>
+  <img src="assets/icons/CTW_icon.png" alt="CTW Logo" width="120"/>
   <p><strong>Content & Task Widget</strong> - Masaüstü seviyesinde içerik ve görev takibi için modern yardımcı uygulama</p>
   
   ![Python Version](https://img.shields.io/badge/python-3.10%2B-blue)
@@ -305,7 +305,7 @@ notifier.send(
 
 \`\`\`bash
 # 1. Depoyu klonlayın
-git clone https://github.com/kullanici/ctw.git
+git clone https://github.com/serdarcayan/ctw.git
 cd ctw
 
 # 2. Sanal ortam oluşturun
@@ -356,7 +356,7 @@ pytest tests/test_models.py -v
 
 Katkılarınızı memnuniyetle karşılıyoruz! Lütfen şu adımları izleyin:
 
-1. **Fork'layın** (https://github.com/kullanici/ctw/fork)
+1. **Fork'layın** (https://github.com/serdarcayan/ctw/fork)
 2. **Branch oluşturun** (`git checkout -b feature/yeni-ozellik`)
 3. **Değişikliklerinizi commit'leyin** (`git commit -am 'Yeni özellik eklendi'`)
 4. **Branch'inizi push'layın** (`git push origin feature/yeni-ozellik`)
@@ -381,15 +381,13 @@ Bu proje **MIT Lisansı** ile lisanslanmıştır. Detaylar için [LICENSE](LICEN
 
 ## 📬 İletişim
 
-- **Proje Sahibi**: [İsim Soyisim](mailto:email@example.com)
-- **GitHub Issues**: [github.com/kullanici/ctw/issues](https://github.com/kullanici/ctw/issues)
-- **Discord**: [CTW Topluluğu](https://discord.gg/ctw)
-- **Dokümantasyon**: [docs.ctw.com](https://docs.ctw.com)
+- **Proje Sahibi**: [İsim Soyisim](mailto:serdarcayan.sc@gmail.com)
+- **GitHub Issues**: [github.com/kullanici/ctw/issues](https://github.com/serdarcayan/ctw/issues)
 
 ---
 
 <div align="center">
-  <sub>Built with ❤️ by the CTW Team</sub>
+  <sub>Built with serdarcayan</sub>
   <br>
   <sub>© 2026 CTW - Content & Task Widget</sub>
 </div>"""
