@@ -1,4 +1,4 @@
-readme = """# CTW – Masaüstü Yardımcı Uygulama
+# CTW – Masaüstü Yardımcı Uygulama
 
 <div align="center">
   <img src="assets/icons/CTW_icon.png" alt="CTW Logo" width="120"/>
@@ -390,4 +390,4 @@ Bu proje **MIT Lisansı** ile lisanslanmıştır. Detaylar için [LICENSE](LICEN
   <sub>Built with serdarcayan</sub>
   <br>
   <sub>© 2026 CTW - Content & Task Widget</sub>
-</div>"""
+</div>
