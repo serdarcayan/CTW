@@ -1,11 +1,11 @@
 import sys
 from PySide6 import QtWidgets
-from app.ui.main_widget import MainWidget
+from app.ui.pages.main_widget import MainWidget
 
 
 def main():
     app = QtWidgets.QApplication(sys.argv)
-    window = MainWidget(current_index=0)
+    window = MainWidget()
     window.show()
     sys.exit(app.exec())
     
