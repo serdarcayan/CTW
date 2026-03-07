@@ -2,6 +2,7 @@ from datetime import datetime
 import json
 
 import PySide6.QtCore as QtCore
+from app.ui import theme
 from PySide6.QtWidgets import (
     QWidget,
     QHBoxLayout,
@@ -51,7 +52,7 @@ class CreateNewContentPage(QWidget):
         left_layout = QVBoxLayout(left_container)
 
         header = QLabel("Create New Remember Content")
-        header.setStyleSheet("font-weight: bold; font-size: 16px;")
+        header.setStyleSheet(f"font-weight: bold; font-size: 16px; color: {theme.ACCENT_PRIMARY};")
         left_layout.addWidget(header)
 
         form_container = QWidget()
@@ -137,13 +138,13 @@ class CreateNewContentPage(QWidget):
         json_layout = QVBoxLayout(json_container)
 
         json_label = QLabel("Live JSON Preview")
-        json_label.setStyleSheet("font-weight: bold;")
+        json_label.setStyleSheet(f"font-weight: bold; color: {theme.ACCENT_PRIMARY};")
         json_layout.addWidget(json_label)
 
         self.json_preview = QTextEdit()
         self.json_preview.setReadOnly(True)
         self.json_preview.setStyleSheet(
-            "background-color: #1e1e1e; color: #00ff99; font-family: Consolas;"
+            f"background-color: {theme.SURFACE}; color: {theme.TEXT_PRIMARY}; font-family: Consolas;"
         )
         json_layout.addWidget(self.json_preview)
 
@@ -285,6 +286,35 @@ class CreateNewContentPage(QWidget):
         self._clear_xpath_error()
         self._update_xpaths()
 
+    
+    def _reset_form(self):
+
+        self.title_input.clear()
+        self.url_input.clear()
+
+        self.source_type_input.setCurrentIndex(0)
+        self.fetch_mode_input.setCurrentIndex(0)
+        self.cache_policy_input.setCurrentIndex(0)
+
+        self.duration_input.setValue(600)
+
+        for inp in self.xpath_inputs:
+            inp.deleteLater()
+
+        self.xpath_inputs.clear()
+
+        self._item = {
+            "title": "",
+            "source_type": "web",
+            "fetch_mode": "manual",
+            "duration": 600,
+            "url": "",
+            "xpaths": [],
+            "cache_policy": "save_all",
+            "created_at": datetime.now().isoformat(),
+        }
+
+        self._refresh_json_preview()
 
 
 
@@ -294,3 +324,4 @@ class CreateNewContentPage(QWidget):
         from app.models.content_model import ContentModel
         
         ContentModel(item=item).create()
+        self._reset_form()

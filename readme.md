@@ -141,7 +141,6 @@ python main.py
 
 ## 📁 Proje Yapısı
 
-\`\`\`
 CTW/
 ├── app/
 │   ├── core/                      # Arka plan servisleri
@@ -202,7 +201,7 @@ CTW/
 ├── requirements.txt                      # Bağımlılıklar
 ├── LICENSE                               # Lisans dosyası
 └── README.md                             # Bu dosya
-\`\`\`
+
 
 ---
 

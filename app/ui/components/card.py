@@ -3,9 +3,11 @@ from PySide6.QtWidgets import (
     QVBoxLayout,
     QHBoxLayout,
     QLabel,
+    QGraphicsDropShadowEffect,
 )
-from PySide6.QtGui import QFont
+from PySide6.QtGui import QFont, QColor
 from PySide6.QtCore import Qt, Signal
+from app.ui import theme
 
 
 class Card(QFrame):
@@ -15,20 +17,28 @@ class Card(QFrame):
     def __init__(self, item: dict):
         super().__init__()
 
+        # subtle drop shadow for a raised card effect
+        shadow = QGraphicsDropShadowEffect(self)
+        shadow.setBlurRadius(12)
+        shadow.setOffset(0, 2)
+        shadow.setColor(QColor(0, 0, 0, 160))
+        self.setGraphicsEffect(shadow)
+
         self.item = item
         self.setObjectName("card")
         self.setCursor(Qt.PointingHandCursor)  # mouse pointer değişsin
 
-        self.setStyleSheet(
-            """
-            QFrame#card {
-                background-color: #1e1e1e;
-                border-radius: 12px;
+        self.setStyleSheet(f"""
+            QFrame#card {{
+                background-color: {theme.SURFACE};
+                border: 1px solid {theme.BORDER_DEFAULT};
+                border-radius: {theme.RADIUS_LARGE}px;
                 padding: 14px;
-            }
-            QFrame#card:hover {
-                background-color: #262626;
-            }
+            }}
+            QFrame#card:hover {{
+                background-color: {theme.SURFACE_HOVER};
+                border: 1px solid {theme.BORDER_DEFAULT};
+            }}
         """
         )
 
@@ -46,7 +56,7 @@ class Card(QFrame):
 
         title = QLabel(self.item.get("title", "No Title"))
         title.setFont(QFont("Arial", 12, QFont.Weight.Bold))
-        title.setStyleSheet("color: white;")
+        title.setStyleSheet(f"color: {theme.TEXT_PRIMARY};background-color: transparent;")
         title.setWordWrap(True)
 
         badge_row = QHBoxLayout()
@@ -67,15 +77,23 @@ class Card(QFrame):
         source_type = self.item.get("source_type", "unknown")
         fetch_mode = self.item.get("fetch_mode", "manual")
 
-        badge_row.addWidget(create_badge(source_type, "#3a86ff"))
-        badge_row.addWidget(create_badge(fetch_mode, "#8338ec"))
+        # map types to theme badge colors
+        color_map = {
+            "api": theme.BADGE_API,
+            "scraper": theme.BADGE_SCRAPER,
+            "cache": theme.BADGE_CACHE,
+            "manual": theme.BADGE_MANUAL,
+        }
+
+        badge_row.addWidget(create_badge(source_type, color_map.get(source_type, theme.BADGE_API)))
+        badge_row.addWidget(create_badge(fetch_mode, color_map.get(fetch_mode, theme.BADGE_MANUAL)))
         badge_row.addStretch()
 
         url_value = self.item.get("url", "")
         url = QLabel(f"<a href='{url_value}'>{url_value}</a>")
         url.setOpenExternalLinks(True)
         url.setTextInteractionFlags(Qt.TextBrowserInteraction)
-        url.setStyleSheet("color: #4cc9f0; font-size: 11px;")
+        url.setStyleSheet(f"color: {theme.ACCENT_PRIMARY}; font-size: 11px; background-color: transparent;")
         url.setWordWrap(True)
 
         duration = self.item.get("duration", 0)
@@ -83,7 +101,7 @@ class Card(QFrame):
         created = self.item.get("created_at", "")
 
         meta = QLabel(f"⏱ {duration}s    💾 {cache}    📅 {created}")
-        meta.setStyleSheet("color: #aaaaaa; font-size: 10px;")
+        meta.setStyleSheet(f"color: {theme.TEXT_SECONDARY}; font-size: 10px; background-color: transparent;")
         meta.setWordWrap(True)
 
         layout.addWidget(title)
