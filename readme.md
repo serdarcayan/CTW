@@ -380,8 +380,8 @@ Bu proje **MIT Lisansı** ile lisanslanmıştır. Detaylar için [LICENSE](LICEN
 
 ## 📬 İletişim
 
-- **Proje Sahibi**: [İsim Soyisim](mailto:serdarcayan.sc@gmail.com)
-- **GitHub Issues**: [github.com/kullanici/ctw/issues](https://github.com/serdarcayan/ctw/issues)
+- **Proje Sahibi**: [Serdar Çayan](mailto:serdarcayan.sc@gmail.com)
+- **GitHub Issues**: [github.com/serdarcayan/ctw/issues](https://github.com/serdarcayan/ctw/issues)
 
 ---
 
